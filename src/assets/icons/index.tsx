@@ -192,7 +192,7 @@ export const LogoutIconSVG = () => {
 
 export const StarIconSVG = () => {
   return (
-    <Svg width={27} height={30} viewBox="0 0 27 30" fill="none">
+    <Svg width={27} height={32} viewBox="0 0 27 30" fill="none">
       <Path
         d="M26.867 4.547A15.808 15.808 0 0015.734 0C7.044 0 0 6.94 0 15.5 0 24.06 7.044 31 15.734 31c3.91 0 7.603-1.413 10.463-3.924l-2.688-2.972a11.74 11.74 0 01-7.775 2.915C9.276 27.02 4.04 21.862 4.04 15.5S9.276 3.98 15.734 3.98c3.148 0 6.093 1.23 8.274 3.38l2.859-2.813z"
         fill="#FFE200"

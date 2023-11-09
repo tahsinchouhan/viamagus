@@ -1,6 +1,6 @@
 import React from 'react';
-import { Pressable, PressableProps, StyleSheet, Text, View } from 'react-native';
-import { twMerge } from 'tailwind-merge';
+import {Pressable, PressableProps, StyleSheet, Text, View} from 'react-native';
+import {twMerge} from 'tailwind-merge';
 
 type ButtonProps = PressableProps & {
   title: string;

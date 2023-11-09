@@ -13,7 +13,7 @@ const StackScreens = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={SCREENS.SECOND_SCREEN}>
+      initialRouteName={SCREENS.FIRST_SCREEN}>
       <Stack.Screen name={SCREENS.FIRST_SCREEN} component={FirstScreen} />
       <Stack.Screen name={SCREENS.SECOND_SCREEN} component={SecondScreen} />
     </Stack.Navigator>

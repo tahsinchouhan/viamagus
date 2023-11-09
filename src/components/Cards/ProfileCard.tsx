@@ -5,26 +5,40 @@ import {
   ProfitArrowIconSVG,
   StarIconSVG,
 } from '../../assets/icons';
+import {useFont} from '../../hooks/useFont';
 
 const ProfileCard = () => {
+  const font = useFont();
   return (
-    <View className="flex-row justify-between  border border-primary-border rounded-md p-6 relative">
+    <View className="flex-row justify-between   border border-[#EEEAF3] rounded-md p-5 relative">
       <View className="flex-1">
-        <Text className="font-semibold text-secondary-text">Under or Over</Text>
+        <Text style={font.montserrat} className="text-sm text-secondary-text">
+          Under or Over
+        </Text>
         <View className="flex-row items-center justify-start mt-3.5 space-x-3">
           <ProfitArrowIconSVG />
-          <Text className="text-2xl font-bold text-[#4F4F4F]">81%</Text>
+          <Text
+            style={font['montserrat-bold']}
+            className="text-2xl text-[#4F4F4F]">
+            81%
+          </Text>
         </View>
       </View>
       <View className="flex-1">
-        <Text className="font-semibold text-secondary-text">Top 5</Text>
+        <Text style={font.montserrat} className="text-sm text-secondary-text">
+          Top 5
+        </Text>
         <View className="flex-row items-center justify-start mt-3.5 space-x-3">
           <LossArrowIconSVG />
-          <Text className="text-2xl font-bold text-[#4F4F4F]">-51% </Text>
+          <Text
+            style={font['montserrat-bold']}
+            className="text-2xl  text-[#4F4F4F]">
+            -51%{' '}
+          </Text>
         </View>
       </View>
 
-      <View className="absolute -top-4 left-1/2 right-1/2">
+      <View className="absolute -top-4 left-0 right-0 items-center">
         <StarIconSVG />
       </View>
     </View>

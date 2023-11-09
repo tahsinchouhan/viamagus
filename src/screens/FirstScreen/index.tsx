@@ -3,7 +3,7 @@ import {Text, View} from 'react-native';
 import GameCard from '../../components/GameCard';
 import PredictionModal from '../../components/PredictionModal';
 import {useFont} from '../../hooks/useFont';
-import { FristScreensNavigationProp } from '../../navigations/types';
+import {FristScreensNavigationProp} from '../../navigations/types';
 
 const FirstScreen = (_props: FristScreensNavigationProp) => {
   const [modalVisible, setModalVisible] = React.useState(false);

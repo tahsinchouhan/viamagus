@@ -23,7 +23,7 @@ const PredictionModal: React.FC<PredictionModalProps> = ({
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const font = useFont();
   return (
-    <GestureRecognizer onSwipeDown={onCloseModal}>
+    <GestureRecognizer>
       <Modal
         visible={modalVisible}
         onRequestClose={onCloseModal}

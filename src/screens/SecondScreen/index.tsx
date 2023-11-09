@@ -1,6 +1,7 @@
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+/* eslint-disable react/no-unstable-nested-components */
+import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {
   HomeIconSVG,
   LeaderboardIconSVG,
@@ -8,17 +9,12 @@ import {
   ProfileIconSVG,
   ResearcheIconSVG,
 } from '../../assets/icons';
-import { SecondScreensNavigationProp } from '../../navigations/types';
-import { COLORS } from '../../utils/constants';
+import {useFont} from '../../hooks/useFont';
+import {SecondScreensNavigationProp} from '../../navigations/types';
+import {COLORS} from '../../utils/constants';
 import FirstTab from './FirstTab';
 
 const Tab = createMaterialBottomTabNavigator();
-
-const FirstTabScreen = () => <FirstTab />;
-const SecondTabScreen = () => <Text>Second Tab</Text>;
-const ThirdTabScreen = () => <Text>Third Tab</Text>;
-const FourthTabScreen = () => <Text>Fourth Tab</Text>;
-const FifthTabScreen = () => <Text>Fifth Tab</Text>;
 
 type TabIconProps = {
   focused: boolean;
@@ -41,37 +37,53 @@ const FifthScreenTabIcon = ({focused}: TabIconProps) => (
   <ProfileIconSVG active={focused} />
 );
 
+const TabBarIcon = ({focused, color, name}: TabIconProps & {name: string}) => {
+  const font = useFont();
+
+  let Icon: React.FC<TabIconProps> | null = null;
+  if (name === 'Home') {
+    Icon = FirstScreenTabIcon;
+  } else if (name === 'Leagues') {
+    Icon = SecondScreenTabIcon;
+  } else if (name === 'Research') {
+    Icon = ThirdScreenTabIcon;
+  } else if (name === 'Leaderboard') {
+    Icon = FourthScreenTabIcon;
+  } else if (name === 'Profile') {
+    Icon = FifthScreenTabIcon;
+  }
+  if (!Icon) {
+    return 'Icon';
+  }
+
+  return (
+    <View className=" w-20 items-center">
+      <Icon color={color} focused={focused} />
+      <Text
+        className="text-xxs mt-1"
+        numberOfLines={1}
+        style={[{color}, font.montserrat]}>
+        {name}
+      </Text>
+    </View>
+  );
+};
+
 const SecondScreen = (_props: SecondScreensNavigationProp) => {
   return (
     <Tab.Navigator
       activeColor={COLORS.active}
       barStyle={styles.barStyle}
+      labeled={false}
+      screenOptions={({route}) => ({
+        tabBarIcon: props => <TabBarIcon {...props} name={route.name} />,
+      })}
       inactiveColor={COLORS['secondary-text']}>
-      <Tab.Screen
-        name="Home"
-        component={FirstTabScreen}
-        options={{tabBarIcon: FirstScreenTabIcon}}
-      />
-      <Tab.Screen
-        name="Leagues"
-        component={SecondTabScreen}
-        options={{tabBarIcon: SecondScreenTabIcon}}
-      />
-      <Tab.Screen
-        name="Research"
-        component={ThirdTabScreen}
-        options={{tabBarIcon: ThirdScreenTabIcon}}
-      />
-      <Tab.Screen
-        name="Leaderboard"
-        component={FourthTabScreen}
-        options={{tabBarIcon: FourthScreenTabIcon}}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={FifthTabScreen}
-        options={{tabBarIcon: FifthScreenTabIcon}}
-      />
+      <Tab.Screen name="Home" component={FirstTab} />
+      <Tab.Screen name="Leagues" component={FirstTab} />
+      <Tab.Screen name="Research" component={FirstTab} />
+      <Tab.Screen name="Leaderboard" component={FirstTab} />
+      <Tab.Screen name="Profile" component={FirstTab} />
     </Tab.Navigator>
   );
 };

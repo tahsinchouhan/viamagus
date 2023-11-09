@@ -2,64 +2,20 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import {
   ArrowIcon,
-  BitCoinIconSVG,
   ChartIconSVG,
-  ClockIconSVG,
   CoinIconSVG,
-  EllipseIconSVG,
-  InfoIconSVG,
   ProfileIconSVG,
 } from '../assets/icons';
 import {useFont} from '../hooks/useFont';
 import {COLORS} from '../utils/constants';
 import Button from './Button';
+import GameInfoCard from './Cards/GameInfoCard';
 
 const GameCard = ({onOpen}: {onOpen: () => void}) => {
   const styles = useFont();
   return (
     <View className=" border border-[#EEEAF3] rounded">
-      <View className="p-4 bg-active h-[104px]">
-        <View className="flex-row justify-between items-center mb-4">
-          <View className="flex-row items-center space-x-2">
-            <Text
-              style={styles['montserrat-semibold']}
-              className="uppercase text-xs text-primary-text">
-              Under or Over
-            </Text>
-            <View>
-              <InfoIconSVG />
-            </View>
-          </View>
-          <View className="flex-row items-center space-x-2">
-            <Text style={styles.montserrat} className="text-[#B296DC]">
-              Starting in
-            </Text>
-            <View>
-              <ClockIconSVG />
-            </View>
-            <Text
-              className="text-xs text-primary-text"
-              style={styles.montserrat}>
-              03:23:12
-            </Text>
-          </View>
-        </View>
-        <View>
-          <Text style={styles.montserrat} className="text-sm text-primary-text">
-            Bitcoin price will be under
-          </Text>
-          <Text className="text-white" style={styles.montserrat}>
-            <Text style={styles['montserrat-bold']}>$24,524 </Text>
-            at 7 a ET on 22nd Jan’21
-          </Text>
-        </View>
-        <View className="absolute -z-10 bottom-0 right-0">
-          <BitCoinIconSVG />
-        </View>
-        <View className="absolute -z-20 bottom-0 right-0 ">
-          <EllipseIconSVG />
-        </View>
-      </View>
+      <GameInfoCard />
       <View className="h-[173px] p-4 space-y-[22px]">
         <View className="flex-row justify-between">
           <View className="space-y-2">
@@ -104,11 +60,16 @@ const GameCard = ({onOpen}: {onOpen: () => void}) => {
               style={styles.montserrat}>
               Entry Fees
             </Text>
-            <Text
-              className="text-primary"
-              style={styles['montserrat-semibold']}>
-              5 <CoinIconSVG />
-            </Text>
+            <View className="flex-row justify-end items-center space-x-1">
+              <Text
+                className="text-primary"
+                style={styles['montserrat-semibold']}>
+                5
+              </Text>
+              <View className="mt-0.5">
+                <CoinIconSVG />
+              </View>
+            </View>
           </View>
         </View>
         <View>

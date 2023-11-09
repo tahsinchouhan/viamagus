@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
 import AppNavigation from './navigations';
 
 function App(): JSX.Element {
