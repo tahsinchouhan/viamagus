@@ -10,10 +10,11 @@ import {
 } from '../../assets/icons';
 import { SecondScreensNavigationProp } from '../../navigations/types';
 import { COLORS } from '../../utils/constants';
+import FirstTab from './FirstTab';
 
 const Tab = createMaterialBottomTabNavigator();
 
-const FirstTabScreen = () => <Text>First Tab</Text>;
+const FirstTabScreen = () => <FirstTab />;
 const SecondTabScreen = () => <Text>Second Tab</Text>;
 const ThirdTabScreen = () => <Text>Third Tab</Text>;
 const FourthTabScreen = () => <Text>Fourth Tab</Text>;

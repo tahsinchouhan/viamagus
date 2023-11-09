@@ -10,6 +10,7 @@ module.exports = {
         success: '#2DABAD',
         failure: '#FE4190',
         active: '#6231AD',
+        'primary-border': '#EEEAF3',
       },
       fontSize: {
         xxs: '10px',
