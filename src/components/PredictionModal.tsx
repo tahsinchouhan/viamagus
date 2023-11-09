@@ -49,7 +49,6 @@ const PredictionModal: React.FC<PredictionModalProps> = ({
               textSize={24}
               textColor={COLORS.primary}
               pickerData={new Array(20).fill(0).map((_, i) => i + 1)}
-              onValueChange={(value: string) => console.log(value)}
             />
             <Text
               style={font.montserrat}
@@ -99,8 +98,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 160,
     backgroundColor: 'white',
-    borderWidth: 1,
-    borderColor: 'black',
     marginVertical: 20,
   },
 });

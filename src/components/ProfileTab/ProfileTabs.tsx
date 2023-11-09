@@ -48,7 +48,6 @@ export default function TabsSection() {
 const TabLabel = ({title, focused}: {title: string; focused: boolean}) => {
   const color = focused ? '#6231AD' : '#727682';
   const font = useFont();
-  console.log(title);
   return (
     <View className="w-28 items-center">
       <Text
