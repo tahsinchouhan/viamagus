@@ -14,6 +14,7 @@ module.exports = {
       },
       boxShadow: {
         '3xl': '0px 4px 4px rgba(0, 0, 0, 0.25)',
+        'primary-border': '#EEEAF3',
       },
       fontSize: {
         xxs: '10px',

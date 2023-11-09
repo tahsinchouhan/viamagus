@@ -7,12 +7,9 @@ type HomeScreenParams = {
 
 type LoginScreenParams = undefined;
 
-type RegisterScreenParams = undefined;
-
 export type RootStackParamList = {
   FIRST_SCREEN: HomeScreenParams;
   SECOND_SCREEN: LoginScreenParams;
-  THIRD_SCREEN: RegisterScreenParams;
 };
 
 export type FristScreensNavigationProp = {
@@ -23,9 +20,4 @@ export type FristScreensNavigationProp = {
 export type SecondScreensNavigationProp = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'SECOND_SCREEN'>;
   route: RouteProp<RootStackParamList, 'SECOND_SCREEN'>;
-};
-
-export type ThirdScreensNavigationProp = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'THIRD_SCREEN'>;
-  route: RouteProp<RootStackParamList, 'THIRD_SCREEN'>;
 };
