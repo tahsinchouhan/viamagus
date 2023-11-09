@@ -10,6 +10,10 @@ module.exports = {
         success: '#2DABAD',
         failure: '#FE4190',
         active: '#6231AD',
+        'primary-text': '#D2BAF5',
+      },
+      boxShadow: {
+        '3xl': '0px 4px 4px rgba(0, 0, 0, 0.25)',
       },
       fontSize: {
         xxs: '10px',

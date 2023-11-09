@@ -11,7 +11,7 @@ type ButtonProps = PressableProps & {
 
 const Button: React.FC<ButtonProps> = ({title, icon, className, ...props}) => {
   return (
-    <Pressable {...props}>
+    <Pressable className="flex-1" {...props}>
       <View
         className={twMerge(
           'bg-active py-2.5 rounded-full items-center justify-center flex-row space-x-1',
